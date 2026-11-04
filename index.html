@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helena - 1 Aninho ✨👑</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Comic Sans MS',cursive}
+  body{background:#ffd6ec;overflow:hidden;height:100vh}
+  .tela{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;transition:opacity 1s;opacity:0;pointer-events:none;overflow-y:auto}
+  .tela.ativa{opacity:1;pointer-events:auto}
+  #tela1{background:linear-gradient(#ffc0da,#fff0f7)}
+  .livro{font-size:110px;animation:flutuar 2s infinite alternate}
+  @keyframes flutuar{from{transform:translateY(0) rotate(-2deg)}to{transform:translateY(-15px) rotate(2deg)}}
+  h1{font-size:40px;color:#d63384;text-shadow:2px 2px 0 #fff;line-height:1.1}
+  .btn{background:#d63384;color:#fff;border:none;padding:15px 30px;border-radius:50px;font-size:18px;margin-top:20px;box-shadow:0 5px 15px rgba(0,0,0,.2);cursor:pointer}
+  #tela2{background:#ff9ecb}
+  .fumaca{font-size:120px;animation:rodar 1.5s infinite}
+  @keyframes rodar{from{transform:scale(.8);opacity:.5}to{transform:scale(1.3);opacity:1}}
+  #tela3{background:linear-gradient(#ffe3f1,#fff)}
+  .castelo{font-size:130px}
+  .princesas{font-size:45px;letter-spacing:8px;margin-top:10px}
+  #tela4{background:linear-gradient(#ff9ecb,#ffd6ec)}
+  .helena{font-size:90px;background:#fff;width:160px;height:160px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:5px solid gold;box-shadow:0 0 30px gold;overflow:hidden}
+  .helena img{width:100%;height:100%;object-fit:cover}
+  .info{background:#fff;padding:16px 22px;border-radius:20px;margin-top:15px;line-height:1.7;width:100%;max-width:360px;box-shadow:0 5px 20px rgba(0,0,0,.1)}
+  .info b{color:#d63384}
+  #contagem{background:#fff3cd;padding:10px 18px;border-radius:50px;margin-top:12px;font-weight:bold;color:#a61e5e}
+  #legenda{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.7);color:#fff;padding:10px 20px;border-radius:20px;font-size:16px;width:90%;max-width:400px;z-index:10}
+  #progresso{position:fixed;top:0;left:0;height:6px;background:#d63384;width:0;transition:width 1s;z-index:11}
+  .whats{background:#25D366;color:#fff;padding:13px 25px;border-radius:50px;text-decoration:none;margin-top:14px;display:inline-block;font-weight:bold}
+  .confete{position:fixed;top:-20px;font-size:24px;animation:cair 3s linear forwards;z-index:20;pointer-events:none}
+  @keyframes cair{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+
+<div id="progresso"></div>
+
+<!-- TELA 1 - CAPA -->
+<div id="tela1" class="tela ativa">
+  <div style="font-size:30px">✨👑✨</div>
+  <div class="livro">📖</div>
+  <h1>Helena</h1>
+  <p style="font-size:22px;color:#a61e5e">1 Aninho de Conto de Fadas</p>
+  <p style="margin-top:8px">Um convite digno de conto de fadas ✨</p>
+  <button class="btn" onclick="comecar()">💖 Abrir Convite</button>
+  <p style="font-size:13px;margin-top:15px;opacity:.7">Toca no botão e aumenta o volume 🔊</p>
+</div>
+
+<!-- TELA 2 - FUMAÇA -->
+<div id="tela2" class="tela">
+  <div class="fumaca">💨🌸💨</div>
+  <h1 style="color:#fff">A mágica está começando...</h1>
+  <p style="color:#fff;font-size:18px">Fecha os olhos e faz um pedido ✨</p>
+</div>
+
+<!-- TELA 3 - CASTELO -->
+<div id="tela3" class="tela">
+  <div class="castelo">🏰</div>
+  <h1>Em um reino encantado...</h1>
+  <div class="princesas">👸👸👸👸👸</div>
+  <p style="font-size:18px;margin-top:10px">As princesas já estão a caminho!<br>Elas vêm conhecer a nossa princesa Helena</p>
+</div>
+
+<!-- TELA 4 - FINAL TUDO -->
+<div id="tela4" class="tela">
+  <div class="helena"><span>👑👶🏽</span></div>
+  <h1 style="margin-top:10px">Helena - 1 Aninho!</h1>
+  <p>Porque eu vou comemorar o meu primeiro aninho!</p>
+
+  <div id="contagem">⏳ Faltam 38 dias...</div>
+
+  <div class="info">
+    <p>📅 <b>Data:</b> Sábado, 12 de Dezembro de 2026</p>
+    <p>⏰ <b>Hora:</b> 15:00 Horas</p>
+    <p>📍 <b>Local:</b> Salão Encantado - Milange</p>
+    <p>🎀 <b>Tema:</b> Princesas / Conto de Fadas</p>
+    <p>👗 <b>Dress Code:</b> Rosa, Lilás ou Fantasia de Princesa</p>
+    <p>🎁 <b>Presente:</b> Traga muito amor e um abraço!</p>
+  </div>
+
+  <a class="whats" href="https://wa.me/258840000000?text=Olá!%20Confirmo%20presença%20no%20aniversário%20da%20Helena%20-%2012%20de%20Dezembro%20-%201%20Aninho">Confirmar no WhatsApp ✅</a>
+  <button class="btn" style="background:#fff;color:#d63384;padding:10px 20px;font-size:15px" onclick="compartilhar()">📤 Compartilhar Convite</button>
+  <p style="font-size:13px;margin-top:12px">Feito com muito amor pela família da Helena 💖</p>
+</div>
+
+<div id="legenda">Olá amiguinhos...</div>
+
+<audio id="musica" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+</audio>
+
+<script>
+let frases = [
+  "Olá amiguinhos...",
+  "Em um reino encantado...",
+  "Um dia muito especial está sendo preparado com muito carinho...",
+  "Porque eu vou comemorar o meu primeiro aninho!",
+  "As luzes já estão brilhando...",
+  "O reino está ficando encantador e cada detalhe é para você!",
+  "Te espero no meu castelo! Não falta! 💖"
+];
+let i = 0;
+function mostrarTela(id){
+  document.querySelectorAll('.tela').forEach(t=>t.classList.remove('ativa'));
+  document.getElementById(id).classList.add('ativa');
+}
+function soltarConfete(){
+  let emojis = ['🌸','✨','👑','💖','🎀','⭐'];
+  for(let k=0;k<30;k++){
+    let s=document.createElement('div');
+    s.className='confete';
+    s.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+    s.style.left=Math.random()*100+'vw';
+    s.style.animationDelay=(Math.random()*1)+'s';
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),3500);
+  }
+}
+function comecar(){
+  document.getElementById('musica').play();
+  mostrarTela('tela2');
+  document.getElementById('progresso').style.width='33%';
+  setTimeout(()=>{
+    mostrarTela('tela3');
+    document.getElementById('progresso').style.width='66%';
+    setTimeout(()=>{
+      mostrarTela('tela4');
+      document.getElementById('progresso').style.width='100%';
+      soltarConfete();
+      setInterval(soltarConfete,5000);
+    },4000);
+  },3000);
+}
+setInterval(()=>{
+  document.getElementById('legenda').innerText = frases[i];
+  i = (i+1) % frases.length;
+},3500);
+
+// CONTAGEM REGRESSIVA - 12 Dez 2026
+let dataFesta = new Date('2026-12-12T15:00:00');
+function atualizarContagem(){
+  let agora = new Date();
+  let diff = dataFesta - agora;
+  let dias = Math.floor(diff / (1000*60*60*24));
+  if(dias>=0) document.getElementById('contagem').innerText = '⏳ Faltam '+dias+' dias para a festa! 🎂';
+}
+atualizarContagem();
+setInterval(atualizarContagem, 1000*60*60);
+
+function compartilhar(){
+  if(navigator.share){
+    navigator.share({title:'Helena - 1 Aninho', text:'Você é nosso convidado especial! Helena faz 1 aninho dia 12 de Dezembro em Milange ✨', url:window.location.href});
+  } else {
+    alert('Copia o link desse site e manda no WhatsApp! 💖');
+  }
+}
+</script>
+</body>
+</html>
